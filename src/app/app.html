@@ -1,0 +1,10 @@
+<ul class="todo-list">
+    <li ng-repeat="item in todos" class="todo-list__item">
+        <input type="checkbox" ng-model="item.isDone">
+        <span ng-class="{'done': item.isDone}">{{item.name}}</span>
+        <span>{{item.deadline}}</span>
+    </li>
+</ul>
+
+<button ng-click="clearCompleted()" class="button">Clear Complited</button>
+<button ui-sref="add-new" class="button">Add new task</button>

@@ -1,0 +1,15 @@
+.add-item {
+    margin-bottom: 30px;
+
+    &__input {
+        box-sizing: border-box;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #732faf;
+        margin-right: 20px;
+        width: 50%;
+        outline: none;
+        margin-bottom: 10px;
+    }
+}

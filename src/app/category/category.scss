@@ -1,0 +1,30 @@
+.category {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 30px;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        transition: box-shadow .2s;
+        cursor: pointer;
+
+        &:hover{
+            box-shadow: 2px 2px 2px #d9c8e8;
+
+        }
+
+    }
+    &__icon {
+
+    }
+    &__text {
+    }
+    &__info {
+        width: 40px;
+
+    }
+}

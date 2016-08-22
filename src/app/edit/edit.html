@@ -1,0 +1,7 @@
+<form name="addTodoForm" ng-submit="addTodo()" class="add-item">
+    <input type="text" required name="name" ng-model="newTodo.name" class="add-item__input">
+    <input type="text" required name="deadline" ng-model="newTodo.deadline" class="add-item__input" placeholder="10/10">
+    <button ng-disabled="addTodoForm.$invalid" class="button button_block">Add</button>
+</form>
+
+<button class="button" ui-sref="home">Cancel</button>
