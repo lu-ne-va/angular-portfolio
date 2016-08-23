@@ -22,6 +22,6 @@ export default function EditTodoController($scope, todoService, categoryService,
             isDone: false
         };
 
-        $state.go('home');
+        $state.go('tasks.list');
     };
 }

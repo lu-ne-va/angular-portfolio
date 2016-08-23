@@ -1,6 +1,6 @@
 <ul class="category">
     <li class="category__item category__item_bold"
-        ui-sref="home"
+        ui-sref="tasks.all"
         ui-sref-active="category__item_active">
         <!--<span class="category__icon">@</span>-->
         <span class="category__text">All tasks</span>
@@ -8,7 +8,7 @@
     </li>
     <li class="category__item"
         ng-repeat="category in $ctrl.categories"
-        ui-sref="list({id: category.id})"
+        ui-sref="tasks.list({id: category.id})"
         ui-sref-active="category__item_active">
         <!--<span class="category__icon">@</span>-->
         <span class="category__text" ng-bind="category.name"></span>

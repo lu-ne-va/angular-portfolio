@@ -2,9 +2,10 @@
 
 export default class ToDoController {
 
-    constructor($scope, todoService, categoryService, $state, $stateParams) {
+    constructor($scope, todoService, categoryService, $state, $stateParams, tasks) {
         'ngInject';
-        let todosChanged = todoService.getAllTasks();
+		debugger;
+        let todosChanged = tasks;
         let categories = categoryService.getCategories();
 
 
@@ -21,15 +22,16 @@ export default class ToDoController {
 			that.categoryName = categoryName;
 		}
 
-		if($state.current.name == 'list') {
-			let id = $stateParams["id"];
-			$scope.todos = todoService.getByCategoryId(id);
-			console.log(id);
+		// if($state.current.name == 'tasks.list') {
+		// 	let id = $stateParams["id"];
+		// 	$scope.todos = todoService.getByCategoryId(id);
+		// 	console.log(id);
+		//
+		// } else {
+		// 	$scope.todos = todosChanged;
+		// }
 
-		} else {
-			$scope.todos = todosChanged;
-		}
-
+		$scope.todos = todosChanged;
 
 
 		$scope.clearCompleted = function () {
