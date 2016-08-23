@@ -1,20 +1,24 @@
 'use strict';
 
-export default function EditTodoController($scope, todoService, $state) {
+export default function EditTodoController($scope, todoService, categoryService, $state) {
     'ngInject';
+
+    $scope.categories = categoryService.getCategories();
 
     $scope.newTodo = {
         name: '',
         deadline: '',
+        category: '',
         isDone: false
     };
 
     $scope.addTodo = function () {
-        todoService.push($scope.newTodo);
+        todoService.tasks.push($scope.newTodo);
 
         $scope.newTodo = {
             name: '',
             deadline: '',
+			category: '',
             isDone: false
         };
 

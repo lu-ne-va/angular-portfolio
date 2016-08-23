@@ -1,6 +1,16 @@
 <ul class="category">
-    <li class="category__item" ng-repeat="category in $ctrl.categories">
-        <span class="category__icon">@</span>
+    <li class="category__item category__item_bold"
+        ui-sref="home"
+        ui-sref-active="category__item_active">
+        <!--<span class="category__icon">@</span>-->
+        <span class="category__text">All tasks</span>
+        <span class="category__info" ng-bind="$ctrl.tasksAtAll"></span>
+    </li>
+    <li class="category__item"
+        ng-repeat="category in $ctrl.categories"
+        ui-sref="list({id: category.id})"
+        ui-sref-active="category__item_active">
+        <!--<span class="category__icon">@</span>-->
         <span class="category__text" ng-bind="category.name"></span>
         <span class="category__info" ng-bind="category.count"></span>
     </li>

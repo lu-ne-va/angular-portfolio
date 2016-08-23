@@ -19,4 +19,19 @@ export default function configAppRouter($stateProvider, $urlRouterProvider) {
 				}
 			}
         })
+        .state('list', {
+            url: '/list/:id',
+            views: {
+            	'category': {
+					template: require('./category/category.html'),
+					controller: 'CategoryController',
+					controllerAs: '$ctrl'
+				},
+            	'content': {
+					template: require('./app.html'),
+					controller: 'ToDoController',
+					controllerAs: '$ctrl'
+				}
+			}
+        })
 }

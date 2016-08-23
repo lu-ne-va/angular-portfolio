@@ -1,15 +1,34 @@
 .add-item {
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+
+    &__form {
+        margin-bottom: 30px;
+        display: inline-block;
+    }
 
     &__input {
         box-sizing: border-box;
-        font-size: 20px;
+        font-size: 16px;
         padding: 10px;
         border-radius: 6px;
         border: 1px solid #732faf;
         margin-right: 20px;
-        width: 50%;
+        width: 100%;
         outline: none;
+        margin-bottom: 15px;
+        height: 32px;
+    }
+    &__label {
+        color: #732faf;
         margin-bottom: 10px;
+        display: block;
+
+    }
+
+    &__button {
+
     }
 }

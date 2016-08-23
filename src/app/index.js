@@ -8,6 +8,7 @@ import category from './category';
 import configAppRouter from './app.router';
 import ToDoController from './app.ctrl'
 import todoService from './app.service'
+import categoryService from './category/category.service'
 
 const deps = [
     uiRouter,
@@ -19,5 +20,6 @@ export default angular.module("todo", deps)
     .config(configAppRouter)
     .controller("ToDoController", ToDoController)
     .factory("todoService", todoService)
+    .factory("categoryService", categoryService)
     .name;
 

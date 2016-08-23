@@ -8,7 +8,7 @@
     &__item {
         display: flex;
         justify-content: space-between;
-        padding: 10px;
+        padding: 10px 20px;
         transition: box-shadow .2s;
         cursor: pointer;
 
@@ -17,14 +17,25 @@
 
         }
 
+        &_bold {
+            font-weight: bold;
+        }
+
+        &_active {
+            background-color: #732faf;
+            color: #fff;
+        }
+
     }
     &__icon {
 
     }
     &__text {
+
     }
     &__info {
-        width: 40px;
+        width: 50px;
+        text-align: right;
 
     }
 }

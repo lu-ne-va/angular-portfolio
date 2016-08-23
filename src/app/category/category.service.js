@@ -4,28 +4,23 @@ export default function categoryService() {
     const categories = [
         {
             name: 'Skills',
-            id: 1,
-            count: '22'
+            id: 1
         },
         {
             name: 'Home',
-            id: 2,
-			count: '-2'
+            id: 2
         },
         {
             name: 'Job',
-            id: 3,
-			count: '2222'
+            id: 3
         },
         {
             name: 'Hobby',
-            id: 4,
-			count: '222'
+            id: 4
         },
         {
             name: 'Sport',
-            id: 5,
-			count: '2'
+            id: 5
         }
     ];
     
