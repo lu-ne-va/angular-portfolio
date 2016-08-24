@@ -4,7 +4,6 @@ export default class ToDoController {
 
     constructor($scope, todoService, categoryService, $state, $stateParams, tasks) {
         'ngInject';
-		debugger;
         let todosChanged = tasks;
         let categories = categoryService.getCategories();
 
