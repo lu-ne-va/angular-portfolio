@@ -12,4 +12,3 @@ export default angular.module('portfolio.about', deps)
 	.component('about', about)
 	.directive('editField', editField)
 	.name;
-
