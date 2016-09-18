@@ -30,7 +30,10 @@ const config = {
     devtool: 'source-map',
 
     resolve: {
-        modulesDirectories: ['node_modules']
+        modulesDirectories: ['node_modules'],
+        alias: {
+            common: path.join(DIR.src, 'app', 'common')
+        }
     },
 
     plugins: [

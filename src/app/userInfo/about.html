@@ -1,0 +1,80 @@
+<section class="about">
+    <div class="about__image">
+        <img src="/src/img/man.png" alt="photo">
+    </div>
+    <div class="about__info info">
+        <div class="info__block">
+            <div class="info__name" ng-if="!$ctrl.nameEdit" ng-click="$ctrl.changeNameStateToEdit()"
+                 ng-bind="$ctrl.userAbout.name"></div>
+            <form ng-if="$ctrl.nameEdit" ng-submit="$ctrl.changeName(userName)" class="info__form">
+                <input type="text" class="info__name"
+                       ng-model="userName"
+                       ng-value="$ctrl.userAbout.name">
+                <button type="submit" class="info__button info__button_submit">+</button>
+                <button ng-click="$ctrl.changeNameStateToRead()" class="info__button info__button_close">x</button>
+            </form>
+        </div>
+
+        <edit-field ng-if="$ctrl.nameEdit"
+                    field="$ctrl.userAbout.name"
+                    on-change="$ctrl.changeName(userName)"
+                    on-cancel="$ctrl.changeNameStateToRead()">
+        </edit-field>
+
+        <div class="info__block">
+            <div ng-if="!$ctrl.placeEdit" class="info__text info__text_place" ng-click="$ctrl.changePlaceStateToEdit()"
+                 ng-bind="$ctrl.userAbout.place"></div>
+            <form ng-if="$ctrl.placeEdit" ng-submit="$ctrl.changePlace(userPlace)" class="info__form">
+                <input type="text" class="info__text info__text_place"
+                       ng-model="userPlace"
+                       ng-value="$ctrl.userAbout.place">
+                <button type="submit" class="info__button info__button_submit">+</button>
+                <button ng-click="$ctrl.changePlaceStateToRead()" class="info__button info__button_close">x</button>
+            </form>
+        </div>
+        <div class="info__block">
+            <div ng-if="!$ctrl.langEdit" class="info__text info__text_lang"
+                 ng-click="$ctrl.changeLangStateToEdit()"
+                 ng-bind="$ctrl.userAbout.lang"></div>
+            <form ng-if="$ctrl.langEdit" ng-submit="$ctrl.changeLang(userLang)" class="info__form">
+                <input type="text" class="info__text info__text_lang"
+                       ng-model="userLang"
+                       ng-value="$ctrl.userAbout.lang">
+                <button type="submit" class="info__button info__button_submit">+</button>
+                <button ng-click="$ctrl.changeLangStateToRead()" class="info__button info__button_close">x</button>
+            </form>
+
+        </div>
+
+        <div class="info__skills skills">
+            <div class="skills__list">
+                <div class="skills__item" ng-repeat="item in $ctrl.userSkills track by $index">
+                    <div class="skills__inner"
+                         ng-class="'skills__inner_' + item.level" ng-bind="item.name">
+                    </div>
+                    <div class="skills__delete" ng-click="$ctrl.deleteSkill($index)">x</div>
+                </div>
+            </div>
+            <div class="info__block">
+                <div ng-if="!$ctrl.skillsAdd" class="skills__add-buttton" ng-click="$ctrl.changeSkillStateToAdd()">Add
+                    skills
+                </div>
+                <form ng-if="$ctrl.skillsAdd" ng-submit="$ctrl.addSkill(newSkill, skillLevel)" class="info__form">
+                    <input type="text" class="info__text info__text_lang"
+                           ng-model="newSkill"
+                           placeholder="Add skill">
+                    <select type="submit" class="info__select" ng-model="skillLevel">
+                        <option value="hard" selected="selected">Strong</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <button type="submit" class="info__button info__button_submit">+</button>
+                    <button ng-click="$ctrl.changeSkillStateToRead()" class="info__button info__button_close">x</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="about__print-button">
+        <div class="print-button" ng-click="$ctrl.printPage()">Print this page</div>
+    </div>
+</section>

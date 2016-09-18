@@ -1,0 +1,50 @@
+<section class="table">
+    <div class="table__item">
+        <div class="content-item">
+            <div class="content-item__title">Portfolio</div>
+            <div class="content-item__description" ng-bind="$ctrl.getStringFromArr($ctrl.portfolio.technologies)"></div>
+            <ul class="content-item__list">
+                <li class="content-item__list-item list-item" ng-repeat="item in $ctrl.portfolio.projects">
+                        <span class="list-item__title">
+                            <a class="list-item__link" href="item.link">{{item.name}}</a>,
+                        </span>
+                    <span class="list-item__text" ng-bind="$ctrl.getStringFromArr(item.technologies)"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="table__item">
+        <div class="content-item">
+            <div class="content-item__title content-item__title_large-margin">Experience</div>
+            <ul class="content-item__list">
+                <li class="content-item__list-item list-item" ng-repeat="item in $ctrl.experience">
+                    <span class="list-item__title" ng-bind="item.technology"></span>,
+                    <span class="list-item__text"  ng-bind="item.edge"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="table__item table__item_code">
+        <div class="content-item content-item_code">
+            <div class="content-item__title">Sample code and algorithms</div>
+        </div>
+    </div>
+    <div class="table__item">
+        <div class="content-item content-item_border-bottom">
+            <div class="content-item__title content-item__title_middle-margin">Availability</div>
+            <div class="content-item__text content-item__text_large content-item__text_center">Full-time</div>
+        </div>
+        <div class="content-item">
+            <div class="content-item__title content-item__title_middle-margin">Preferred environment</div>
+            <div class="content-item__text content-item__text_center" ng-bind="$ctrl.preferredEnvironment"></div>
+        </div>
+    </div>
+    <div class="table__item content-item" ng-repeat="item in $ctrl.feedback">
+        <div class="content-item content-item_quote">
+            <div class="content-item__title content-item__title_middle-margin content-item__title_one-row" ng-bind="item.title"></div>
+            <div class="content-item__quote"  ng-bind="item.text"></div>
+            <div ng-if="item.author" class="content-item__author"  ng-bind="'- '+item.author"></div>
+        </div>
+    </div>
+
+</section>

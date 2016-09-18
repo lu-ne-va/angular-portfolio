@@ -1,25 +1,14 @@
 'use strict';
 import angular from 'angular';
-import uiRouter from 'angular-ui-router/release/angular-ui-router';
+import about from './userInfo';
+import more from './userMore';
 
-import editPage from './edit';
-import category from './category';
-
-import configAppRouter from './app.router';
-import ToDoController from './app.ctrl'
-import todoService from './app.service'
-import categoryService from './category/category.service'
 
 const deps = [
-    uiRouter,
-    editPage,
-    category
+    about,
+	more
 ];
 
-export default angular.module("todo", deps)
-    .config(configAppRouter)
-    .controller("ToDoController", ToDoController)
-    .factory("todoService", todoService)
-    .factory("categoryService", categoryService)
+export default angular.module('portfolio', deps)
     .name;
 
